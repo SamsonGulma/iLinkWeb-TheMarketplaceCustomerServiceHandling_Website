@@ -4,8 +4,61 @@ body{
 
 .formField{
     border-color: rgb(239, 239, 139);
-    align-self: center;
+    align-items: center;
     display: flex;
     flex: auto;
     flex-direction: column;
+}
+
+.license-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.license-img-frame{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border: dotted black;
+    width: 400px;
+    height: 300px;
+}
+
+.chooseLicense{
+    width: 300px;
+    border: solid black;
+}
+
+.product-img-container{
+    width: 300px;
+    height: 300px;
+    display: grid;
+    border: dotted black;
+}
+
+.product-descriptions{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-descriptions input{
+    align-self: center;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-style: ridge;
+    display: flex;
+    outline: none;
+    flex-direction: column;
+}
+
+.product-descriptions input:focus{
+    border-bottom-style: solid;
+    border-bottom-color: rgb(248, 248, 181);
 }

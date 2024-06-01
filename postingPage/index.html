@@ -8,18 +8,40 @@
 </head>
 <body>
     
+    <h1>
+        Post Your Sales
+    </h1>
+
     <form action="posting.php"  method="post" enctype="multipart/form-data" class="formField" >
-        <input type="file" class="licenseImg">
+        <div class="license-container">
+            <div class="license-img-frame">Choose your License Image</div>
+            <input class="chooseLicense" type="file" class="licenseImg">
+        </div>
 
-        <button type="button" class="category-drop-down-btn">Product Category</button>
+        <button type="button" class="category-drop-down-btn" name="something posted">
+            <p>Product Category</p> <img class="drop-down-arrow" src="" alt="">
+        </button>
 
-        <input type="image" id="product-Img1" placeholder="">
+        <div class="product-img-container">
+            <input type="image" id="product-Img1">
+    
+            <input type="image" id="product-Img2">
+    
+            <input type="image" id="product-Img3">
 
-        <input type="image" id="product-Img2">
+            <input type="image" id="product-Img4">
+            
+        </div>
 
-        <input type="image" id="product-Img3">
-
-        <input type="text" placeholder="Enter your Product Description Briefly." >
+        <div class="product-descriptions">
+            <input type="text" class="simple-description1" placeholder="Enter your easy description">
+            <input type="text" class="simple-description2" placeholder="Enter your easy description">
+            <input type="text" class="simple-description3" placeholder="Enter your easy description">
+            <input type="text" class="simple-description4" placeholder="Enter your easy description">
+            <input type="text" class="simple-description5" placeholder="Enter your easy description">
+            <input type="text" class="simple-description6" placeholder="Enter your easy description">
+            <input type="text" class="simple-description7" placeholder="Enter your easy description">
+        </div>
         
         <input type="number" class="price" placeholder="Enter your pricing." >
 
