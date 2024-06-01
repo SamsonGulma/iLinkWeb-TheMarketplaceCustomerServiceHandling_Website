@@ -4,5 +4,5 @@ body{
 
 .formField{
     align-self: center;
-
+    flex-direction: row;
 }
