@@ -15,12 +15,24 @@
     <form action="posting.php"  method="post" enctype="multipart/form-data" class="formField" >
         <div class="license-container">
             <div class="license-img-frame">Choose your License Image</div>
-            <input class="chooseLicense" type="file" class="licenseImg">
+            <input class="chooseLicense" type="file">
         </div>
 
-        <button type="button" class="category-drop-down-btn" name="something posted">
-            <p>Product Category</p> <img class="drop-down-arrow" src="" alt="">
-        </button>
+        <div class="categorically">
+
+            <label for="categories">Select the category of your sale: </label>
+            <select class="category-drop-down-btn" name="categories" id="categories">
+                <img class="drop-down-arrow" src="./images/icons8-expand-arrow-100.png" alt="">
+                <option value="Select catergory: " disabled selected>Select catergory: </option>
+                <option value="Phone">Phone</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Wearables">Wearables</option>
+            </select>
+        </div>
+
 
         <div class="product-img-container">
             <input type="image" id="product-Img1">
