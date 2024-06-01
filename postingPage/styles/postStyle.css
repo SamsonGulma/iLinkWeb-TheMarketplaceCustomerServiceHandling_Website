@@ -3,6 +3,9 @@ body{
 }
 
 .formField{
+    border-color: rgb(239, 239, 139);
     align-self: center;
-    flex-direction: row;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
 }

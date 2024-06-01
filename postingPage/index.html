@@ -8,15 +8,24 @@
 </head>
 <body>
     
-    <form action="" class="formField">
-        <input type="image" class="licenseImg" placeholder="paste your license Image here.">
-        <button class="category-drop-down-btn">Product Category</button>
-        <input type="image" id="product-Img1" required>
+    <form action="posting.php"  method="post" enctype="multipart/form-data" class="formField" >
+        <input type="file" class="licenseImg">
+
+        <button type="button" class="category-drop-down-btn">Product Category</button>
+
+        <input type="image" id="product-Img1" placeholder="">
+
         <input type="image" id="product-Img2">
+
         <input type="image" id="product-Img3">
-        <input type="text" placeholder="Enter your Product Description." required>
-        <input type="text" class="price" placeholder="Enter your pricing." required>
+
+        <input type="text" placeholder="Enter your Product Description Briefly." >
+        
+        <input type="number" class="price" placeholder="Enter your pricing." >
+
         <input type="text" placeholder="Enter your contact address">
+
+        <button type="submit" class="submit-btn">Submit</button>
     </form>
     
 </body>
