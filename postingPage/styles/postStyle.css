@@ -3,7 +3,6 @@ body{
 }
 
 .formField{
-    border-color: rgb(239, 239, 139);
     align-items: center;
     display: flex;
     flex: auto;
@@ -26,8 +25,10 @@ body{
 }
 
 .chooseLicense{
+    align-self: flex-start;
     width: 300px;
-    border: solid black;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
 .categorically{
@@ -105,6 +106,21 @@ select:focus{
     color: rgb(66, 172, 103);
 }
 
+.product-descriptions .add-btn{
+    align-self: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 70px;
+    height: 70px;
+    font-size: larger;
+    font-weight: lighter;
+    background-color: chartreuse;
+    color: black;
+    padding: 10px;
+    border-style: none;
+    border-radius: 50%;
+}
+
 .price{
     width: 70px;
     height: 50px;
@@ -117,3 +133,5 @@ select:focus{
 .price:focus::placeholder{
     color: rgb(66, 172, 103);
 }
+
+

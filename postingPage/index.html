@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/postStyle.css">
+    <script src="assets/app.js" defer></script>
     <title>iLink|post</title>
 </head>
 <body>
@@ -20,10 +21,9 @@
 
         <div class="categorically">
 
-            <label for="categories">Select the category of your sale: </label>
             <select class="category-drop-down-btn" name="categories" id="categories">
                 <img class="drop-down-arrow" src="./images/icons8-expand-arrow-100.png" alt="">
-                <option value="Select catergory: " disabled selected>Select catergory: </option>
+                <option value="Select catergory: " disabled selected>Select Sale Catergory: </option>
                 <option value="Phone">Phone</option>
                 <option value="Laptop">Laptop</option>
                 <option value="Furniture">Furniture</option>
@@ -47,38 +47,23 @@
 
         <div class="product-descriptions">
             
-            <div class="simple-description1">
-                <input type="text"  placeholder="Enter your easy description (1)" required>
-            </div>
+                <input type="text" class="simple-description1" placeholder="Enter your easy description (1)" required>
+                <input type="text" class="simple-description2" placeholder="Enter your easy description (2)" required>
+                <input type="text" class="simple-description3" placeholder="Enter your easy description (3)">
+                <input type="text" class="simple-description4" placeholder="Enter your easy description (4)">
+                <input type="text" class="simple-description5" placeholder="Enter your easy description (5)">
+                <input type="text" class="simple-description6" placeholder="Enter your easy description (6)">
+                <input type="text" class="simple-description7" placeholder="Enter your easy description (7)">
 
-            <div class="simple-description2">
-                <input type="text"  placeholder="Enter your easy description (2)" required>
-            </div>
-            
-            <div class="simple-description3">
-                <input type="text"  placeholder="Enter your easy description (3)">
-            </div>
-
-            <div class="simple-description4">
-                <input type="text"  placeholder="Enter your easy description (4)">
-            </div>
-
-            <div  class="simple-description5" >
-                <input type="text"placeholder="Enter your easy description (5)">
-            </div>
-            <div class="simple-description6">
-                <input type="text"  placeholder="Enter your easy description (6)">
-            </div>
-            <div class="simple-description7">
-                <input type="text"  placeholder="Enter your easy description (7)">
-            </div>
+                <button class="add-btn">(+)</button>
         </div>
         
         <input type="number" class="price" placeholder="ETB 0" required>
 
         <input type="text" placeholder="Enter your contact address">
 
-        <button type="submit" class="submit-btn">Submit</button>
+
+        <button type="submit" class="submit-btn"  >Submit</button>
     </form>
     
 </body>
