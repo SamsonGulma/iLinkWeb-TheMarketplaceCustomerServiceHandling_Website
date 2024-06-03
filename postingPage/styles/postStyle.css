@@ -2,26 +2,27 @@ body{
     background-color: white;
 }
 
-.formField{
-    align-items: center;
-    display: flex;
-    flex: auto;
-    flex-direction: column;
-}
 
 .license-container{
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .license-img-frame{
     margin: 20px;
+    background-color: rgb(186, 230, 238);
     display: flex;
     flex-direction: column;
     border: dotted black;
     width: 400px;
     height: 300px;
+}
+
+.license-img-frame img{
+    width: 100px;
+    height: 100px;
+    padding-top: 100px;
+    align-self: center;
 }
 
 .chooseLicense{
@@ -32,8 +33,7 @@ body{
 }
 
 .categorically{
-    
-    align-items: center;
+    align-self: center;
     display: flex;
     flex-direction: row;
 }
@@ -62,15 +62,21 @@ select:focus{
 }
 
 .product-img-container{
-    width: 300px;
+    width: 400px;
     height: 300px;
-    display: grid;
+    margin: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(186, 230, 238);
     border: dotted black;
 }
 
-.product-descriptions{
-    display: flex;
-    flex-direction: column;
+.product-img-container img{
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    padding-top: 100px;
 }
 
 .product-descriptions input{
@@ -93,10 +99,7 @@ select:focus{
 }
 
 .product-descriptions input:focus{
-    border-bottom-left-radius: 5px;
-    border-left-style: solid;
     border-bottom-style: solid;
-    border-left-color: rgb(66, 172, 103);
     border-bottom-color: rgb(66, 172, 103);
 }
 
@@ -106,7 +109,15 @@ select:focus{
     color: rgb(66, 172, 103);
 }
 
-.product-descriptions .add-btn{
+#simple-description3,
+#simple-description4,
+#simple-description5,
+#simple-description6,
+#simple-description7{
+    display: none;
+}
+
+.product-descriptions #add-btn{
     align-self: center;
     align-items: center;
     margin-bottom: 20px;
@@ -114,14 +125,14 @@ select:focus{
     height: 70px;
     font-size: larger;
     font-weight: lighter;
-    background-color: chartreuse;
+    background-color: rgb(6, 238, 88);
     color: black;
     padding: 10px;
     border-style: none;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 
-.price{
+#price{
     width: 70px;
     height: 50px;
     font-size: 1em;
@@ -130,8 +141,14 @@ select:focus{
     padding: 5px;
 }
 
-.price:focus::placeholder{
-    color: rgb(66, 172, 103);
+#price:focus{
+    border-color: rgb(66, 172, 103);
 }
+
+#currency{
+    font-size: larger;
+    font-weight: 400;
+}
+
 
 

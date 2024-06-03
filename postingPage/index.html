@@ -15,55 +15,52 @@
 
     <form action="posting.php"  method="post" enctype="multipart/form-data" class="formField" >
         <div class="license-container">
-            <div class="license-img-frame">Choose your License Image</div>
-            <input class="chooseLicense" type="file"  accept="image/gif, image/jpeg, image/png, file/pdf">
+            <div class="license-img-frame"><img src="images/icons8-image-100.png" alt=""></div>
+            <input class="chooseLicense" type="file"  accept="image/jpeg, image/png, file/pdf">
         </div>
 
+        <h3>Your Sales here:</h3>
         <div class="categorically">
 
             <select class="category-drop-down-btn" name="categories" id="categories">
                 <img class="drop-down-arrow" src="./images/icons8-expand-arrow-100.png" alt="">
                 <option value="Select catergory: " disabled selected>Select Sale Catergory: </option>
-                <option value="Phone">Phone</option>
-                <option value="Laptop">Laptop</option>
-                <option value="Furniture">Furniture</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Shoes">Shoes</option>
-                <option value="Wearables">Wearables</option>
+                <option id="phone" value="Phone">Phone</option>
+                <option id="laptop" value="Laptop">Laptop</option>
+                <option id="furniture" value="Furniture">Furniture</option>
+                <option id="clothing" value="Clothing">Clothing</option>
+                <option id="shoes" value="Shoes">Shoes</option>
+                <option id="wearables" value="Wearables">Wearables</option>
             </select>
         </div>
 
-
-        <div class="product-img-container">
-            <input type="image" id="product-Img1">
-    
-            <input type="image" id="product-Img2">
-    
-            <input type="image" id="product-Img3">
-
-            <input type="image" id="product-Img4">
-            
+        <div>
+            <div class="product-img-container"><img id="salesImg1" src="images/icons8-image-100.png" alt=""></div>
+                <input id="product-Img1" type="file" accept="image/gif, image/jpeg, image/png">
         </div>
 
         <div class="product-descriptions">
+            <h3>Your Sales Description here:</h3>
+            <input type="text" id="simple-description1" placeholder="Enter your easy description (1)" required>
+            <input type="text" id="simple-description2" placeholder="Enter your easy description (2)" required>
+            <input type="text" id="simple-description3" placeholder="Enter your easy description (3)">
+            <input type="text" id="simple-description4" placeholder="Enter your easy description (4)">
+            <input type="text" id="simple-description5" placeholder="Enter your easy description (5)">
+            <input type="text" id="simple-description6" placeholder="Enter your easy description (6)">
+            <input type="text" id="simple-description7" placeholder="Enter your easy description (7)">
             
-                <input type="text" class="simple-description1" placeholder="Enter your easy description (1)" required>
-                <input type="text" class="simple-description2" placeholder="Enter your easy description (2)" required>
-                <input type="text" class="simple-description3" placeholder="Enter your easy description (3)">
-                <input type="text" class="simple-description4" placeholder="Enter your easy description (4)">
-                <input type="text" class="simple-description5" placeholder="Enter your easy description (5)">
-                <input type="text" class="simple-description6" placeholder="Enter your easy description (6)">
-                <input type="text" class="simple-description7" placeholder="Enter your easy description (7)">
-
-                <button class="add-btn">(+)</button>
+            <button type="button" id="add-btn" onclick="hideAndShow()">(+)</button>
         </div>
         
-        <input type="number" class="price" placeholder="ETB 0" required>
+        <div>
+            <code id="currency">ETB</code>
+            <input type="number" id="price" placeholder=" 0 " required>
+        </div>
 
         <input type="text" placeholder="Enter your contact address">
 
 
-        <button type="submit" class="submit-btn"  >Submit</button>
+        <button type="submit" class="submit-btn">Submit</button>
     </form>
     
 </body>
