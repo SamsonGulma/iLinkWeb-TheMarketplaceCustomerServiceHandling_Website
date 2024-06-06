@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>E-commerce Homepage</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img
+                    src="assets/png/logo-no-background1.png"
+                    alt="I Link Text"
+                />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <div class="search-container">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search products..."
+                    />
+                    <button id="search-button" onclick="performSearch()">
+                        Search
+                    </button>
+                </div>
+                <div class="home-links">
+                    <a href="#" onclick="showContent('furniture')">Furniture</a>
+                    <a href="#" onclick="showContent('clothes')">Clothes</a>
+                    <a href="#" onclick="showContent('phones')">Phones</a>
+                    <a href="#" onclick="showContent('laptops')">Laptops</a>
+                    <a href="#" onclick="showContent('other')">Other</a>
+                </div>
+            </section>
+
+            <section id="home" class="content active">
+                <h1 id="welcome-text">Welcome to Our E-commerce Website</h1>
+                <p id="browse-text">
+                    Browse through our categories to find what you need.
+                </p>
+
+                <div class="item_container">
+                    <!-- Furniture items -->
+                    <div class="item">
+                        <img src="assets/pngegg (8).png" alt="Sofa" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Very luxurious and comfortable Chair</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (7).png" alt="Sofa" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Very luxurious and comfortable Sofa</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone items -->
+                    <div class="item">
+                        <img src="assets/i phone 13 pro.png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest smartphone i phone 13 pro</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (4).png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest smartphone with advanced features</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (5).png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High-performance smartphone</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+
+                    <!-- Laptop items -->
+                    <div class="item">
+                        <img src="assets/pngegg.png" alt="Laptop" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Powerful and sleek laptop</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/Apple MacBook Pro 15.4 inch Laptop.png"
+                            alt="Phone"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest Apple MacBook Pro 15.4 inch Laptop</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (1).png" alt="Laptop" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High-performance laptop</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="assets/Sony headset.png" alt="hedset" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Sony headset</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/White comfortable Sofa.jpg"
+                            alt="Sofa"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Very luxurious and comfortable Sofa</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/Mens's Long Sleeve T-shirt.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Mens's Long Sleeve T-shirt</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/men's blue dress shirt.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>men's blue dress shirt</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/Series 3 Apple Watch.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Series 3 Apple Watch</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/Small Leather bag.png" alt="bag" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Small Leather bag</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/Dress Clothing Red, dress, fashion, vintage Clothing.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>
+                                Dress Clothing Red, dress, fashion, vintage
+                                Clothing
+                            </p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/Black T Shirt.png" alt="Laptop" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Black T-shirt</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/white crew-neck shirt.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>white crew-neck shirt</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/iphone 13.png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest smartphone i phone 13</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (9).png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High-performance smartphone</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (10).png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest smartphone with advanced features</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (2).png" alt="Macbook" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High-performance and Powerful Gaming PC</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/High quality audio headset.png"
+                            alt="hedset"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High quality audio headset</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/Headphones Apple.png" alt="hedset" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>
+                                Headphones Apple iPhone 8 Plus Apple earbuds
+                                Lightning
+                            </p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other sections for each category remain unchanged -->
+            <section id="furniture" class="content">
+                <h1>Furniture</h1>
+                <div class="item_container">
+                    <div class="item">
+                        <img src="assets/pngegg (8).png" alt="Chair" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Very luxurious and comfortable Chair</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (7).png" alt="small Sofa" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Very luxurious and comfortable Sofa</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (6).png" alt="Sofa" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Very luxurious and comfortable Bed</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/White comfortable Sofa.jpg"
+                            alt="Sofa"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Very luxurious and comfortable Sofa</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="clothes" class="content">
+                <h1>Clothes</h1>
+                <p>Browse our clothing selection.</p>
+                <div class="item_container">
+                    <div class="item">
+                        <img
+                            src="assets/Mens's Long Sleeve T-shirt.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Mens's Long Sleeve T-shirt</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/men's blue dress shirt.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>men's blue dress shirt</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/Dress Clothing Red, dress, fashion, vintage Clothing.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>
+                                Dress Clothing Red, dress, fashion, vintage
+                                Clothing
+                            </p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/Black T Shirt.png" alt="Laptop" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Black T-shirt</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/white crew-neck shirt.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>white crew-neck shirt</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="phones" class="content">
+                <h1>Phones</h1>
+                <p>Discover the latest phones.</p>
+                <div class="item_container">
+                    <div class="item" onclick="showItemDetails(this)">
+                        <img src="assets/pngegg (4).png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest smartphone with advanced features</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/i phone 13 pro.png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest smartphone i phone 13 pro</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/iphone 13.png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest smartphone i phone 13</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (5).png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High-performance smartphone</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (9).png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High-performance smartphone</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (10).png" alt="Phone" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest smartphone with advanced features</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="laptops" class="content">
+                <h1>Laptops</h1>
+                <p>Check out our range of laptops.</p>
+                <div class="item_container">
+                    <div class="item">
+                        <img src="assets/pngegg.png" alt="Macbook" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Powerful and sleek laptop</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/Apple MacBook Pro 15.4 inch Laptop.png"
+                            alt="Phone"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Latest Apple MacBook Pro 15.4 inch Laptop</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (1).png" alt="Macbook" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High-performance laptop</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/pngegg (2).png" alt="Macbook" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High-performance and Powerful Gaming PC</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="other" class="content">
+                <h1>Other</h1>
+                <p>Find various other products here.</p>
+
+                <div class="item_container">
+                    <div class="item">
+                        <img
+                            src="assets/Series 3 Apple Watch.png"
+                            alt="Laptop"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Series 3 Apple Watch</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/Apple Watch Series 3.png"
+                            alt="watch"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Apple Watch Series 3</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/Small Leather bag.png" alt="bag" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Small Leather bag</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/Apple Watch Series 2.png"
+                            alt="watch"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Apple Watch Series 2</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/Sony headset.png" alt="hedset" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>Sony headset</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/Headphones Apple.png" alt="hedset" />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>
+                                Headphones Apple iPhone 8 Plus Apple earbuds
+                                Lightning
+                            </p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                            src="assets/High quality audio headset.png"
+                            alt="hedset"
+                        />
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>High quality audio headset</p>
+                            <p>Sellers Contact info: . . .</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal container -->
+        <div id="item-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
