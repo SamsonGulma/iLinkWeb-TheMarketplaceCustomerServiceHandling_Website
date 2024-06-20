@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/postStyle.css">
+    
+    <script src="assets/app.js" defer></script>
+    <title>iLink|Post</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img
+                src="logo.png"
+                alt="I Link Text"
+            />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/php/homePage/index.php" class="active">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="/php/postingPage/index.html">Add Product</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1>
+        iLink
+    </h1>
+
+    <h2>
+        Post Your Sales
+    </h2>
+
+    <form action="posting.php" method="post" enctype="multipart/form-data" class="formField">
+        <div class="license-container">
+            <div class="license-img-frame"><img src="images/icons8-image-100.png" alt=""></div>
+            <input name="chooseLicense" class="chooseLicense" type="file" accept="image/jpeg, image/png, file/pdf" required>
+        </div>
+    
+        <h3>Your Sales here:</h3>
+        <div class="categorically">
+    
+            <select class="category-drop-down-btn" name="categories" id="categories">
+                <img class="drop-down-arrow" src="./images/icons8-expand-arrow-100.png" alt="" required>
+                <option value="Select catergory: " disabled selected required>Select Sale Catergory: </option>
+                <option id="phone" value="Phone">Phone</option>
+                <option id="laptop" value="Laptop">Laptop</option>
+                <option id="furniture" value="Furniture">Furniture</option>
+                <option id="clothing" value="Clothing">Clothing</option>
+                <option id="shoes" value="Shoes">Shoes</option>
+                <option id="wearables" value="Wearables">Wearables</option>
+            </select>
+        </div>
+    
+        <div>
+            <div class="product-img-container"><img id="salesImg1" src="images/icons8-image-100.png" alt=""></div>
+            <input name="product_image1" id="product-Img1" type="file" accept="image/gif, image/jpeg, image/png, .jpg" required>
+        </div>
+        <div class="product-descriptions">
+            <h3>Your Sales Description here:</h3>
+            <input type="text" id="simple-description1" name = "simple_description1" placeholder="Enter your easy description (1)" required >
+        </div>
+        
+        <div>
+            <code id="currency">ETB</code>
+            <input type="number" id="price" placeholder=" 0 " required>
+        </div>
+
+        <input class="contact-address" type="text" placeholder="Enter your contact address" id = "contact_address" name = "contact_address">
+
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(33, 148, 225);
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0; /* Ensures header stays at the top */
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+.logo img {
+    max-width: 5rem;
+    height: 4rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    cursor: pointer;
+}
+
+nav ul li a.active {
+    background-color: #ddd;
+    color: black;
+    border-radius: 15px;
+}
+
+.horizontal {
+    display: flex;
+  
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px; /* Increased margin to account for fixed header */
+    flex-wrap: wrap; /* Allow content to wrap if needed */
+}
+
+.content {
+    text-align: center;
+    margin: 30px;
+    width: 300px; /* Adjust content width as needed */
+    padding: 20px;
+    background-color: #f0f0f0; /* Example background color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Example box shadow */
+}
+
+.content img {
+    width: 300px; /* Adjust image size as needed */
+    height: 300px; /* Adjust image size as needed */
+    border-radius: 50%; /* Makes the image round */
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin: 5px 0;
+}
+
+.content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.content button:hover {
+    background-color: #0056b3;
+}
+button {
+    margin: 10px;
+}
+
+#productpage{
+    display: none;
+}
