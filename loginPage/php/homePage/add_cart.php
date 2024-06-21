@@ -1,5 +1,7 @@
 <?php
 require ("app_post/db_connection.php");
+session_start();
+$user_id = $_SESSION['user_id'];
 // Retrieve data sent via Ajax
 $itemId = $_POST['itemId'];
 $price = $_POST['price'];
@@ -22,9 +24,9 @@ if ($quantity > 0){
         $updateStmt->close();
     } else {
         // If product_id does not exist, insert a new row
-        $insertSql = "INSERT INTO cart (product_id, quantity, total_price, price) VALUES (?, ?, ?, ?)";
+        $insertSql = "INSERT INTO cart (product_id, quantity, total_price, price, user_id) VALUES (?, ?, ?, ?,?)";
         $insertStmt = $conn->prepare($insertSql);
-        $insertStmt->bind_param("iiid", $itemId, $quantity, $totalPrice, $price);
+        $insertStmt->bind_param("iiidi", $itemId, $quantity, $totalPrice, $price,$user_id);
         $insertResult = $insertStmt->execute();
         $insertStmt->close();
     }

@@ -624,9 +624,11 @@ include "auth.php";
                         <?php
                         require ("app_post/db_connection.php");
                         require ("cart_counter.php");
-                        $sql = "SELECT cart.id as cart_id, cart.quantity, cart.total_price, product.photo, product.price
+                        session_start();
+                        $user_id = $_SESSION["user_id"];
+                        $sql = "SELECT cart.id as cart_id, cart.quantity,cart.user_id, cart.total_price, product.photo, product.price
                                 FROM cart
-                                JOIN product ON cart.product_id = product.id";
+                                JOIN product ON cart.product_id = product.id where cart.user_id = $user_id";
     
                         $result = $conn->query($sql);
                         
@@ -655,7 +657,7 @@ include "auth.php";
                                 echo "            " . $totalPrice . " ETB";
                                 echo "        </div>";
                                 echo "        <div class='delate_cart'>";
-                                echo "            <button class='delete-button' data-cart-id='" . $cartId . "'>Delete</button>";
+                                echo "            <button class='delete-button' data-cart-id='" . $cartId . "' onclick=\"delete_cart(" . $cartId. ")\">Delete</button>";
                                 echo "        </div>";
                                 echo "    </div>";
                             }
@@ -697,6 +699,7 @@ include "auth.php";
                                 <h2>Discount</h2>
                             </div>
                             <?php
+                            $discount *= $total_price;
                             echo "
                             <div class = \"summary_detail\" >
                                 <h2>$discount ETB</h2>
@@ -718,7 +721,7 @@ include "auth.php";
                         <div class = "cart_summary" id = "buy_cart_button">
             
                             <div  class = "summary_detail">
-                                <button class="buy-button">Buy</button>
+                                <button class="buy-button"  onclick="PayByChap('.$after_discount.', '.$user_id.')">Buy</button>
                             </div>
                         
                 </div>
@@ -739,6 +742,8 @@ include "auth.php";
         <script src="app_post/save_post.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src ="add_cart.js"></script>
+        <script src ="cart_page/delete_cart.js"></script>
+        <script src ="payment/pay.js"></script>
         
     </body>
 </html>
