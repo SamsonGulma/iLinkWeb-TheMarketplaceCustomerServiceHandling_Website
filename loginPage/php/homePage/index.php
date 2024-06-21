@@ -1,6 +1,7 @@
 
 <?php
 include "auth.php"; 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -622,6 +623,7 @@ include "auth.php";
                         </div>
                         <?php
                         require ("app_post/db_connection.php");
+                        require ("cart_counter.php");
                         $sql = "SELECT cart.id as cart_id, cart.quantity, cart.total_price, product.photo, product.price
                                 FROM cart
                                 JOIN product ON cart.product_id = product.id";
@@ -637,6 +639,8 @@ include "auth.php";
                                 $quantity = $row["quantity"];
                                 $totalPrice = $quantity * $productPrice;
                                 $cartId = $row["cart_id"];
+                                $counter_cart += $quantity;
+                                $total_price += $totalPrice;
                                 echo "    <div class='product_display'>";
                                 echo "        <div class='image_cart'>";
                                 echo "            <img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>";
@@ -670,33 +674,46 @@ include "auth.php";
                             <div class = "summary_title">
                                 <h2>Total Product</h2>
                             </div>
-                            <div class = "summary_detail">
-                                <h2>5</h2>
-                            </div>
+                            <?php
+                            echo "
+                            <div class = \"summary_detail\">
+                                <h2>$counter_cart</h2>
+                            </div>"
+                            ?>
                         </div>
                         <div class = "cart_summary">
                             <div class = "summary_title">
                                 <h2>Price</h2>
                             </div>
-                            <div  class = "summary_detail">
-                                <h2>4000 ETB</h2>
-                            </div>
+                            <?php
+                            echo "
+                            <div class = \"summary_detail\" >
+                                <h2>$total_price ETB</h2>
+                            </div>";
+                            ?>
                         </div>
                         <div class = "cart_summary">
                             <div class = "summary_title">
                                 <h2>Discount</h2>
                             </div>
-                            <div class = "summary_detail" >
-                                <h2>105 ETB</h2>
-                            </div>
+                            <?php
+                            echo "
+                            <div class = \"summary_detail\" >
+                                <h2>$discount ETB</h2>
+                            </div>";
+                            ?>
                         </div>
                         <div class = "cart_summary">
                             <div class = "summary_title">
                                 <h2>Total Price</h2>
                             </div>
-                            <div  class = "summary_detail">
-                                <h2>3895 ETB</h2>
-                            </div>
+                            <?php
+                            $after_discount = $total_price - $discount;
+                            echo "
+                            <div class = \"summary_detail\" >
+                                <h2>$after_discount ETB</h2>
+                            </div>";
+                            ?>
                         </div>
                         <div class = "cart_summary" id = "buy_cart_button">
             
