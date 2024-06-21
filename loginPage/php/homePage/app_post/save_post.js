@@ -105,14 +105,28 @@ document.getElementById('submitButton_verified').addEventListener('click', funct
             data: formData,
             processData: false,
             contentType: false,
+            
             success: function(response) {
-                
-                console.log('Success:', response);
+                try {
+                    const jsonResponse = JSON.parse(response);
+                    alert(jsonResponse.message);
+                    if (jsonResponse.success) {
+                        window.location.reload();
+                    }
+                } catch (e) {
+                    
+                    alert('An error occurred while processing your request.');
+                }
                 
             },
             error: function(xhr, status, error) {
-                
-                console.error('Error:', status, error);
+                try {
+                    const jsonResponse = JSON.parse(xhr.responseText);
+                    alert(jsonResponse.message);
+                } catch (e) {
+                   
+                    alert('An error occurred while processing your request.');
+                }
                 
             }
         });

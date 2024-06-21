@@ -35,7 +35,7 @@ include "auth.php";
                 include "db_connection.php"; // Include your database connection script
 
                 // Query to fetch data from Verify_Admin and User tables
-                $sql = "SELECT v.image, u.username, v.phone, v.id, v.user_id FROM Verify_Admin v JOIN User u ON v.user_id = u.id where u.is_verified = 0";
+                $sql = "SELECT v.image, u.username, v.phone, v.id, v.user_id FROM kyc v JOIN User u ON v.user_id = u.id where u.is_verified = 0";
                 $result = $conn->query($sql);
 
                 // Check if there are results

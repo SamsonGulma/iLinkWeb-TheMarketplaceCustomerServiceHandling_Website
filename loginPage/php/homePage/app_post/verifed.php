@@ -24,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $imgData = file_get_contents($kyc_image);
         
         // Prepare SQL statement
-        $stmt = $conn->prepare("INSERT INTO Verify_Admin (image, phone, user_id) VALUES (?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO kyc (image, user_id,phone) VALUES (?, ?, ?)");
         
         // Bind parameters
         $null = NULL; // Placeholder for BLOB
-        $stmt->bind_param("bsi", $null, $phone, $user_id);
+        $stmt->bind_param("bis", $null, $user_id, $phone);
         
         // Send BLOB data
         $stmt->send_long_data(0, $imgData);
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Execute statement
         if ($stmt->execute()) {
             // Success response
-            $response = array('success' => true, 'message' => 'Data received successfully.');
+            $response = array('success' => true, 'message' => 'Data received successfully. wait untile verification.');
             echo json_encode($response);
         } else {
             // Error response

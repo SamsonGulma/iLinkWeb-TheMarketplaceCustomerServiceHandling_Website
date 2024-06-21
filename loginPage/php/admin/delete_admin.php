@@ -7,7 +7,7 @@ $user_id = $data->user_id;
 $table_id = $data->table_id;
 
 // Example logic for deleting the admin
-$sql = "DELETE FROM Verify_Admin WHERE id = ?";
+$sql = "DELETE FROM kyc WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $table_id);
 

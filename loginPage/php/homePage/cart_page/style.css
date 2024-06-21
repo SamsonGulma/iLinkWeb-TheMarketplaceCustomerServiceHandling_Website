@@ -44,6 +44,7 @@ nav ul li a {
 .cart_container {
     margin: 30px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 .list_product {
@@ -52,6 +53,7 @@ nav ul li a {
 .product_display {
     display: flex;
     direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 255, 255);

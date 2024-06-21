@@ -4,12 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const homeButton = document.getElementById('home_page');
     const profileButton = document.getElementById('profile_page');
     const cartButton = document.getElementById('cart_page');
+    
 
     // Page references
     const homePage = document.getElementById('homepage_loder');
     const cartPage = document.getElementById('cart_page_display');
     const postPage = document.getElementById('post_product');
     const verifepage = document.getElementById('verifid_user');
+    const notify_user = document.getElementById('notify');
 
     // Initial page setup
 
@@ -40,13 +42,29 @@ document.addEventListener("DOMContentLoaded", function() {
                     postPage.style.display = 'block';
                     homePage.style.display = 'none';
                     cartPage.style.display = 'none';
+                    notify_user.style.display = 'none';
+
                     verifepage.style.display = 'none';
                 } else {
+                    console.log(data.kyc_present);
+                    if (data.kyc_present){
+                        homePage.style.display = 'none';
+                        cartPage.style.display = 'none';
+                        notify_user.style.display = 'block';
+                        postPage.style.display = 'none';
+                        verifepage.style.display = 'none';
+                    }
+                    else {
                     // Redirect or handle invalid user
                     homePage.style.display = 'none';
                     cartPage.style.display = 'none';
+                    notify_user.style.display = 'none';
                     postPage.style.display = 'none';
                     verifepage.style.display = 'block';
+                    }
+
+
+
                 }
             })
             .catch(error => {
@@ -54,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.error('Error fetching data:', error);
                 // alert('Error fetching data from server.');
             });
+
     });
 
     // Event listener for cartButton (cart_page)
@@ -68,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
         homePage.style.display = 'none';
         cartPage.style.display = 'block';
         postPage.style.display = 'none';
+        notify_user.style.display = 'none';
         verifepage.style.display = 'none';// Example: Redirect to logout page
     });
 
@@ -83,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
         homePage.style.display = 'block';
         cartPage.style.display = 'none';
         postPage.style.display = 'none';
+        notify_user.style.display = 'none';
         verifepage.style.display = 'none';
     });
 

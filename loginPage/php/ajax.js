@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
                     alert(response.message);
+                    if (response.status !== "error"){
                     window.location.reload();
+                    }
                 } else {
                     alert('Error: ' + xhr.status);
                 }

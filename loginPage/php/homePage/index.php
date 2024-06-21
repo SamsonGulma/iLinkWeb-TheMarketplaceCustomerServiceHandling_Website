@@ -585,6 +585,15 @@ include "auth.php";
             
 
             </section>
+            <!-- =========================================user notify about the verification============================ -->
+            <section id = "notify">
+                <div class="overlay">
+                    <div class="message-box">
+                        <h1>Verification Pending</h1>
+                        <p>We are verifying your information. Please wait, we will notify you once the process is complete.</p>
+                    </div>
+                </div>
+            </section>
             <!-- =================================================================================cart section ============================================== -->
             <section id = "cart_page_display">
                 <div class = "cart_title_main">
