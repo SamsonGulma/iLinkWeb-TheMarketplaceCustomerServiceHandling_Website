@@ -23,8 +23,6 @@ document.getElementById('submitButton').addEventListener('click', function() {
         formData.append('image5', image5.files[0]);
         formData.append('description', disc.value);
         formData.append('price', price.value);
-        formData.append('kycImage', image_kyc.files[0]);
-        formData.append('phone', phone.value);
         formData.append('catagory',catagory.value);
         
         $.ajax({
@@ -33,15 +31,29 @@ document.getElementById('submitButton').addEventListener('click', function() {
             data: formData,
             processData: false,
             contentType: false,
+            
+            
             success: function(response) {
                 
-                console.log('Success:', response);
+                try {
+                    // Parse the JSON response
+                    var data = JSON.parse(response);
+                    
+                    // Display an alert based on the response status
+                    if (data.status === 'success') {
+                        alert(data.message);
+                        window.location.reload();
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                } catch (e) {
+                    
+                    alert('An unexpected error occurred.');
+                }
                 
             },
             error: function(xhr, status, error) {
-                
-                console.error('Error:', status, error);
-                
+                alert('An error occurred while processing your request.');
             }
         });
 

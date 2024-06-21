@@ -51,6 +51,8 @@ nav ul li a.active {
 
 .horizontal {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   
 }
 .container {

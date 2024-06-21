@@ -99,8 +99,8 @@ include "auth.php";
                     // Display phone number
                     echo '<p>price: '.$row['price'].'</p>';
                     // // Verify button (you can design this as needed)
-                    echo '<button onclick="productVerify('.$row['id'].')">Verify</button>';
-                    echo '<button onclick="deleteProduct('.$row['id'].')" style = "background-color : red;">Delete</button>';
+                    echo '<button onclick="productVerify('.$row['id'].','.$row['id'].'.)">Verify</button>';
+                    echo '<button onclick="deleteProduct('.$row['id'].'.)" style = "background-color : red;">Delete</button>';
                     echo '</div>';
                     echo '</div>';
                 }

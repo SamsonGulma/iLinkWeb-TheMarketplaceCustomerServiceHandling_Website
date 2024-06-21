@@ -170,9 +170,39 @@ function deleteUser(adminId, tableId) {
 }
 
 
-function productVerify(adminId,) {
-    alert("prodcut verified" + adminId);
+function productVerify(productId) {
+    
+    fetch('/admin/product_verify.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ product_id: productId})
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.success) {
+            location.reload();
+        }
+    })
+    .catch(error => console.error('Error:', error));
 }
-function deleteProduct(adminId,) {
-    alert("prodcut delelted" + adminId);
+function deleteProduct(tableId) {
+    console.log(123);
+    fetch('/admin/delete_product.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ table_id: tableId})
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.success) {
+            location.reload();
+        }
+    })
+    .catch(error => console.error('Error:', error));
 }
