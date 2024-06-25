@@ -35,3 +35,42 @@ document.addEventListener("DOMContentLoaded", function () {
         xhr.send(data);
     });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("login_pages").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "login.php", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    
+                    if (response.status === "error") {
+                        alert(response.message);
+                    } else if (response.status === "success") {
+                        
+                        window.location.href = response.redirect;
+                    }
+                } else {
+                    alert('Error: ' + xhr.status);
+                }
+            }
+        };
+
+        const data = JSON.stringify({
+            username: username,
+            password: password
+        });
+
+        xhr.send(data);
+    });
+});

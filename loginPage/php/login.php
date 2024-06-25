@@ -6,8 +6,10 @@ include "db_connection.php";
 session_start();
 
 // Retrieve form data
-$username = $_POST['username'];
-$password = $_POST['password'];
+$data = json_decode(file_get_contents("php://input"));
+
+$username = $data->username;
+$password = $data->password;
 
 // Prepare and execute SQL query to retrieve user information
 $sql = "SELECT * FROM User WHERE username = ?";
@@ -15,6 +17,8 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $username);
 $stmt->execute();
 $result = $stmt->get_result();
+
+$response = [];
 
 if ($result->num_rows > 0) {
     // User found, verify password
@@ -25,24 +29,24 @@ if ($result->num_rows > 0) {
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['isAdmin'] = $row['isAdmin'];
 
-        // Check if user is admin
-        if ($row['isAdmin'] == 1) {
-            // Redirect to admin page
-            header("Location: admin/admin.php");
-            exit();
-        } else {
-            // Redirect to user dashboard or home page
-            header("Location: homePage/index.php");
-            exit();
-        }
+        // Prepare success response
+        $response['status'] = 'success';
+        $response['message'] = 'Login successful';
+        $response['redirect'] = $row['isAdmin'] == 1 ? 'admin/admin.php' : 'homePage/index.php';
     } else {
-        echo "Invalid username or password";
+        $response['status'] = 'error';
+        $response['message'] = 'Invalid username or password';
     }
 } else {
-    echo "User not found";
+    $response['status'] = 'error';
+    $response['message'] = 'User not found';
 }
 
 // Close database connection
 $stmt->close();
 $conn->close();
+
+// Send JSON response
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>

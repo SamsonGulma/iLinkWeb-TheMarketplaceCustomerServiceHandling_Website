@@ -36,7 +36,7 @@ function detailProduct(id) {
 
            
             productImages = data.images;
-            const detail = data.description;
+            const detail = data.detail;
             const price = data.price;
             const phone = data.phone
             console.log(productImages.length);
