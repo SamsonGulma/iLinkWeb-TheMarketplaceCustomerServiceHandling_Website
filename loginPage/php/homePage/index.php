@@ -13,6 +13,7 @@ include "auth.php";
         <link rel="stylesheet" href="app_post/style.css" />
         <link rel="stylesheet" href="cart_page/style.css" />
         <link rel="stylesheet" href="detailPage/style.css" />
+        <link rel="stylesheet" href="profile.css" />
     </head>
     <body>
         <header>
@@ -24,10 +25,10 @@ include "auth.php";
             </div>
             <nav>
                 <ul>
-                    <li><a href="/" class="active" id = "home_page">Home</a></li>
-                    <li><a href="/" id = "cart_page">Cart</a></li>
+                    <li><a href="" class="active" id = "home_page">Home</a></li>
+                    <li><a href="" id = "cart_page">Cart</a></li>
                     <li><a href="" id = "add_product_page">Add Product</a></li>
-                    <li><a href="/" id = "profile_page">Profile</a></li>
+                    <li><a href="" id = "profile_detail">Profile</a></li>
                 </ul>
             </nav>
         </header>
@@ -758,6 +759,44 @@ include "auth.php";
                         
                 </div>
             </section>
+            <!-- ====================================================profile =============================================== -->
+            <section id = "profile_page">
+                <?php
+                session_start();
+                $fullname = $_SESSION['fullname'];
+                $user_name = $_SESSION['username'];
+                $email = $_SESSION['email'];
+                $isAdmin = $_SESSION['isAdmin'];
+                $isVerify = $_SESSION['is_verify'];
+                $profile_pic = $_SESSION['profile_picture'];
+                $is_admin = "Customer";
+                if ($isAdmin == 1){
+                    $is_admin = "Admin";
+                }
+                $is_verify = "Not Verified";
+                if ($isVerify == 1){
+                    $is_verify = "Verified";
+                }
+                
+                
+                echo '
+                <div class="profile_cotainer">
+                    <div class="profile-card">
+                        <div class="head_profile">
+                            <img src="' . $profile_pic . '" alt="Profile Picture" class="profile-picture">
+                            <h1 class="name">' . $fullname . '</h1>
+                        </div>
+                        <div class="profile-body">
+                            <div class="social-links">
+                                <a href="#" class="social-link">' . $is_verify . '</a>
+                                <a href="#" class="social-link">' . $is_admin . '</a>
+                                <a href="logout.php" class="social-link" onclick = "logout()" >Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+                ?>
+            </section>
         </main>
 
         <!-- Modal container -->
@@ -777,6 +816,8 @@ include "auth.php";
         <script src ="cart_page/delete_cart.js"></script>
         <script src ="payment/pay.js"></script>
         <script src ="detailPage/script.js"></script>
+        <script src ="profile.js"></script>
+
         
     </body>
 </html>

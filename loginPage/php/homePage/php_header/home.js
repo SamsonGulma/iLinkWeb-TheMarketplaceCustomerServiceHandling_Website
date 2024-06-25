@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const profileButton = document.getElementById('profile_page');
     const cartButton = document.getElementById('cart_page');
     
+    const profile_detail = document.getElementById('profile_detail');
 
     // Page references
     const homePage = document.getElementById('homepage_loder');
@@ -12,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const postPage = document.getElementById('post_product');
     const verifepage = document.getElementById('verifid_user');
     const notify_user = document.getElementById('notify');
+    const profile_page = document.getElementById('profile_page');
+    
 
     // Initial page setup
 
@@ -23,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
         homeButton.style.cssText = "background: none; color: white;";
         profileButton.style.cssText = "background: none; color: white;";
         cartButton.style.cssText = "background: none; color: white;";
-
-        // Call valid.php using fetch
+        profile_page.style.cssText = "background: none; color: white;";
+        
         fetch('/homePage/php_header/valid_user.php')
             .then(response => {
                 if (!response.ok) {
@@ -45,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     notify_user.style.display = 'none';
                     document.getElementById('dtail_page').style.display = 'none';
                     verifepage.style.display = 'none';
+                    profile_page.style.display = 'none';
                 } else {
                     console.log(data.kyc_present);
                     if (data.kyc_present){
@@ -53,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         notify_user.style.display = 'block';
                         postPage.style.display = 'none';
                         verifepage.style.display = 'none';
+                        profile_page.style.display = 'none';
                         document.getElementById('dtail_page').style.display = 'none';
                     }
                     else {
@@ -60,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     homePage.style.display = 'none';
                     cartPage.style.display = 'none';
                     notify_user.style.display = 'none';
+                    profile_page.style.display = 'none';
                     postPage.style.display = 'none';
                     verifepage.style.display = 'block';
                     document.getElementById('dtail_page').style.display = 'none';
@@ -84,11 +90,13 @@ document.addEventListener("DOMContentLoaded", function() {
         homeButton.style.cssText = "background: none; color: white;";
         profileButton.style.cssText = "background: none; color: white;";
         postButton.style.cssText = "background: none; color: white;";
+        profile_page.style.cssText = "background: none; color: white;";
 
         // Redirect to logout page
         homePage.style.display = 'none';
         cartPage.style.display = 'block';
         postPage.style.display = 'none';
+        profile_page.style.display = 'none';
         notify_user.style.display = 'none';
         document.getElementById('dtail_page').style.display = 'none';
         verifepage.style.display = 'none';// Example: Redirect to logout page
@@ -101,11 +109,30 @@ document.addEventListener("DOMContentLoaded", function() {
         postButton.style.cssText = "background: none; color: white;";
         profileButton.style.cssText = "background: none; color: white;";
         cartButton.style.cssText = "background: none; color: white;";
+        profile_page.style.cssText = "background: none; color: white;";
 
         // Display home page
         homePage.style.display = 'block';
         cartPage.style.display = 'none';
         postPage.style.display = 'none';
+        profile_page.style.display = 'none';
+        notify_user.style.display = 'none';
+        document.getElementById('dtail_page').style.display = 'none';
+        verifepage.style.display = 'none';
+    });
+    profile_detail.addEventListener("click", function(event) {
+        event.preventDefault();
+        homeButton.style.cssText = "background: none; color: white;";
+        postButton.style.cssText = "background: none; color: white;";
+        profileButton.style.cssText = "background: none; color: white;";
+        cartButton.style.cssText = "background: none; color: white;";
+        profile_page.style.cssText = "background-color: #ddd; color: black; border-radius: 15px;";
+
+        // Display home page
+        homePage.style.display = 'none';
+        cartPage.style.display = 'none';
+        postPage.style.display = 'none';
+        profile_page.style.display = 'block';
         notify_user.style.display = 'none';
         document.getElementById('dtail_page').style.display = 'none';
         verifepage.style.display = 'none';

@@ -217,7 +217,7 @@ main {
     text-align: left;
     margin-top: 20px;
 }
-#post_product, #cart_page_display,#verifid_user,#notify,#dtail_page{
+#post_product, #cart_page_display,#verifid_user,#notify,#dtail_page,#profile_page{
     display: none;
 }
 .counter-container {
