@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     homePage.style.display = 'none';
                     cartPage.style.display = 'none';
                     notify_user.style.display = 'none';
-
+                    document.getElementById('dtail_page').style.display = 'none';
                     verifepage.style.display = 'none';
                 } else {
                     console.log(data.kyc_present);
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         notify_user.style.display = 'block';
                         postPage.style.display = 'none';
                         verifepage.style.display = 'none';
+                        document.getElementById('dtail_page').style.display = 'none';
                     }
                     else {
                     // Redirect or handle invalid user
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     notify_user.style.display = 'none';
                     postPage.style.display = 'none';
                     verifepage.style.display = 'block';
+                    document.getElementById('dtail_page').style.display = 'none';
                     }
 
 
@@ -88,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cartPage.style.display = 'block';
         postPage.style.display = 'none';
         notify_user.style.display = 'none';
+        document.getElementById('dtail_page').style.display = 'none';
         verifepage.style.display = 'none';// Example: Redirect to logout page
     });
 
@@ -104,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cartPage.style.display = 'none';
         postPage.style.display = 'none';
         notify_user.style.display = 'none';
+        document.getElementById('dtail_page').style.display = 'none';
         verifepage.style.display = 'none';
     });
 

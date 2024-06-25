@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
     $catagory = $_POST["catagory"];
     $phone = $_POST["contact_address"]; // Assuming this field is also in the POST data
-    $user_id = $_POST["user_id"]; // Assuming this field is also in the POST data
+   // Assuming this field is also in the POST data
     $created_at = date('Y-m-d H:i:s');
 
     // Initialize an array to hold the images

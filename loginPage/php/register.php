@@ -27,7 +27,8 @@ if ($stmt_email->num_rows > 0) {
     echo json_encode(["status" => "error", "message" => "Username is already taken"]);
 } else {
     // Prepare and bind insertion
-
+    $valid = 1;
+    $admin = 1;
     $stmt_insert = $conn->prepare("INSERT INTO User (fullname, username, email, password) VALUES (?, ?, ?,?)");
     $stmt_insert->bind_param("ssss", $fullname, $username_register, $email,$password_register);
 

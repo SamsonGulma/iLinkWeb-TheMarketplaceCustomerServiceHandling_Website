@@ -12,6 +12,7 @@ include "auth.php";
         <link rel="stylesheet" href="styles.css" />
         <link rel="stylesheet" href="app_post/style.css" />
         <link rel="stylesheet" href="cart_page/style.css" />
+        <link rel="stylesheet" href="detailPage/style.css" />
     </head>
     <body>
         <header>
@@ -85,7 +86,10 @@ include "auth.php";
                                     
                                     echo "<div class=\"item\">";
                                     
-                                    echo "<img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>";
+                                    // echo "<button><img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'></button>";
+                                    echo "<button onclick=\"detailProduct($itemId)\" class='image-button'>
+                                    <img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>
+                                </button>";
                                     echo "<div class=\"description\">";
                                     echo "<p>" . $first_20_words . "</p>";
                                     echo "<p>" . $row["contact_address"] . "</p>";
@@ -152,7 +156,9 @@ include "auth.php";
                                     $words = str_word_count($description, 1);
                                     $first_20_words = implode(' ', array_slice($words, 0, 5));
                                     echo "<div class=\"item\">";
-                                    echo "<img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>";
+                                    echo "<button onclick=\"detailProduct($itemId)\" class='image-button'>
+                                    <img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>
+                                </button>";
                                     echo "<div class=\"description\">";
                                     echo "<p>" . $first_20_words . "</p>";
                                     echo "<p>" . $row["contact_address"] . "</p>";
@@ -220,7 +226,9 @@ include "auth.php";
                                     $first_20_words = implode(' ', array_slice($words, 0, 5));
                                     echo "<div class=\"item\">";
                                     
-                                    echo "<img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>";
+                                    echo "<button onclick=\"detailProduct($itemId)\" class='image-button'>
+                                    <img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>
+                                </button>";
                                     echo "<div class=\"description\">";
                                     echo "<p>" . $first_20_words . "</p>";
                                     echo "<p>" . $row["contact_address"] . "</p>";
@@ -287,7 +295,9 @@ include "auth.php";
                                     $first_20_words = implode(' ', array_slice($words, 0, 5));
                                     echo "<div class=\"item\">";
                                     
-                                    echo "<img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>";
+                                    echo "<button onclick=\"detailProduct($itemId)\" class='image-button'>
+                                    <img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>
+                                </button>";
                                     echo "<div class=\"description\">";
                                     echo "<p>" . $first_20_words . "</p>";
                                     echo "<p>" . $row["contact_address"] . "</p>";
@@ -354,7 +364,9 @@ include "auth.php";
                                 $first_20_words = implode(' ', array_slice($words, 0, 5));
                                 echo "<div class=\"item\">";
                                 
-                                echo "<img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>";
+                                echo "<button onclick=\"detailProduct($itemId)\" class='image-button'>
+                                    <img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>
+                                </button>";
                                 echo "<div class=\"description\">";
                                 echo "<p>" . $first_20_words . "</p>";
                                 echo "<p>" . $row["contact_address"] . "</p>";
@@ -423,7 +435,9 @@ include "auth.php";
                                 $first_20_words = implode(' ', array_slice($words, 0, 5));
                                 echo "<div class=\"item\">";
                                
-                                echo "<img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>";
+                                echo "<button onclick=\"detailProduct($itemId)\" class='image-button'>
+                                    <img src='data:image/jpeg;base64," . $photo_data . "' alt='Product Photo'>
+                                </button>";
                                 echo "<div class=\"description\">";
                                 echo "<p>" . $first_20_words . "</p>";
                                 echo "<p>" . $row["contact_address"] . "</p>";
@@ -455,6 +469,24 @@ include "auth.php";
                     </div>
                 </section>
             </section>
+            <!-- ============================================================detail bage============================================== -->
+            <section id = "dtail_page">
+                <div class="image-container">
+                    <img src="logo.png" alt="Description of image" class="full-width-image" id="image">
+                    <div class="hover-arrows">
+                        <span class="left-arrow" id="left-arrow">&lt;</span>
+                        <span class="right-arrow" id="right-arrow">&gt;</span>
+                    </div>
+                    <div class="note">
+                        <div class="inside">
+                            <p><strong>Price:</strong> 123</p>
+                            <p><strong>Phone:</strong> nod ofdshoa</p>
+                            <p><strong>Description:</strong> Description of the image</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- ============================================================================post product ============================================== -->
             <section id = "post_product" >
                 <div class = "container">
@@ -744,6 +776,7 @@ include "auth.php";
         <script src ="add_cart.js"></script>
         <script src ="cart_page/delete_cart.js"></script>
         <script src ="payment/pay.js"></script>
+        <script src ="detailPage/script.js"></script>
         
     </body>
 </html>
