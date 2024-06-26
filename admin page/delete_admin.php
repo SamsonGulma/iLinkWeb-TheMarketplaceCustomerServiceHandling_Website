@@ -1,17 +1,16 @@
 <?php
-// Database connection parameters
+/* Define the parameters for the database connection */
 $servername = "localhost";
 $username = "root";
 $password = "tolossa";
 $dbname = "LinkMarket";
 
-// Create connection
+/* Establish a new connection to the database */
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+/* Verify the connection status */
 if ($conn->connect_error) {
-    // If connection fails, output an error message and terminate script
+    /* Terminate the script and display an error message if the connection fails */
     die("Connection failed: " . $conn->connect_error);
 }
 ?>
-
