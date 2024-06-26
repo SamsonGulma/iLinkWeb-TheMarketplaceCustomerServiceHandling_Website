@@ -480,9 +480,9 @@ include "auth.php";
                     </div>
                     <div class="note">
                         <div class="inside">
-                            <p><strong>Price:</strong> 123</p>
+                            <p><strong>Description:</strong> 123</p>
                             <p><strong>Phone:</strong> nod ofdshoa</p>
-                            <p><strong>Description:</strong> Description of the image</p>
+                            <p><strong>Price:</strong> Description of the image</p>
                         </div>
                     </div>
                 </div>

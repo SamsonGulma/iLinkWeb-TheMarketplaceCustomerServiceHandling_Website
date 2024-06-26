@@ -51,9 +51,9 @@ function detailProduct(id) {
                     </div>
                     <div class="note">
                         <div class="inside">
-                            <p><strong>Price:</strong> ${detail}</p>
+                            <p><strong>Description:</strong> ${detail}</p>
                             <p><strong>Phone:</strong> ${phone}</p>
-                            <p><strong>Description:</strong> ${price}</p>
+                            <p><strong>Price:</strong> ${price}</p>
                         </div>
                     </div>
                 </div>
