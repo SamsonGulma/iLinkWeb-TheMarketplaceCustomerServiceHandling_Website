@@ -1,6 +1,0 @@
-{
-    "require": {
-        "yaphet17/chapa": "^1.0",
-        "firebase/php-jwt": "^6.10"
-    }
-}
